@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
     vbox.vm.network "forwarded_port", guest: 8083, host: 8083,auto_correct: true
     vbox.vm.network "forwarded_port", guest: 9092, host: 9092,auto_correct: true
     vbox.vm.synced_folder "../../workspace-pc","/home/vagrant/workspace-pc",create: true, type: "virtualbox"
-	vbox.vm.provision "shell", path: "provision.sh"
+    vbox.vm.provision "file", source: "maven.sh", destination: "/tmp/maven.sh"
+    vbox.vm.provision "shell", path: "provision.sh"
+    config.vm.boot_timeout = 600
+
   end
 end
