@@ -23,6 +23,10 @@ sudo tar xzf apache-maven-3.5.2-bin.tar.gz
 sudo ln -s apache-maven-3.5.2  maven
 source /etc/profile.d/maven.sh
 sudo cp /tmp/maven.sh /etc/profile.d/maven.sh
+
+#install Git
+sudo yum install -y git
+
 #installing jenkins
 sudo yum install -y wget
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
